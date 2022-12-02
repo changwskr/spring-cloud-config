@@ -1,0 +1,27 @@
+
+…or create a new repository on the command line
+echo "# spring-cloud-config" >> README.md
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/changwskr/spring-cloud-config.git
+git push -u origin main
+
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/changwskr/spring-cloud-config.git
+git branch -M main
+git push -u origin main
+
+
+
+만약 github에서 장애가 발생하면
+	- github의 spring-cloud-config 프로젝트 삭제하고 다시 생성한다. 
+	- git init
+	- git add .
+	- git commit -m "first commit"
+	- git remote add origin https://github.com/changwskr/spring-cloud-config.git
+	- git push --set-upstream origin master
+	- git push -u origin master
+	- git pull 마지막에 이것을 꼭 해봐야 된다.

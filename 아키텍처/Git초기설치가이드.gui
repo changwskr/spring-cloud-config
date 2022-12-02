@@ -1,0 +1,46 @@
+C:\WSJ_EX\01.workspace\2022-11-17-spring-cloud-config-localrepository>git add ecommerce.yml
+
+C:\WSJ_EX\01.workspace\2022-11-17-spring-cloud-config-localrepository>git commit -m "second11"
+[master 4dea196] second11
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\WSJ_EX\01.workspace\2022-11-17-spring-cloud-config-localrepository>git add .
+
+C:\WSJ_EX\01.workspace\2022-11-17-spring-cloud-config-localrepository>git commit -m "dev"
+[master 9b77086] dev
+ 3 files changed, 23 insertions(+), 1 deletion(-)
+ create mode 100644 ecommerce-dev.yml
+ create mode 100644 ecommerce-prod.yml
+
+C:\WSJ_EX\01.workspace\2022-11-17-spring-cloud-config-localrepository>git remote -v
+
+C:\WSJ_EX\01.workspace\2022-11-17-spring-cloud-config-localrepository>git remote add origin https://github.com/changwskr/spring-cloud-config.git
+
+C:\WSJ_EX\01.workspace\2022-11-17-spring-cloud-config-localrepository>git remote -v
+origin  https://github.com/changwskr/spring-cloud-config.git (fetch)
+origin  https://github.com/changwskr/spring-cloud-config.git (push)
+
+C:\WSJ_EX\01.workspace\2022-11-17-spring-cloud-config-localrepository>git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+C:\WSJ_EX\01.workspace\2022-11-17-spring-cloud-config-localrepository>git push --set-upstream origin master
+Enumerating objects: 26, done.
+Counting objects: 100% (26/26), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (25/25), done.
+Writing objects: 100% (26/26), 2.03 KiB | 1.02 MiB/s, done.
+Total 26 (delta 12), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (12/12), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/changwskr/spring-cloud-config/pull/new/master
+remote:
+To https://github.com/changwskr/spring-cloud-config.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\WSJ_EX\01.workspace\2022-11-17-spring-cloud-config-localrepository>
