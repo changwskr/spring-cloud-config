@@ -1,0 +1,16 @@
+token:
+  expiration_time: 86400000
+  secret: user_token_dev
+
+# 2022-11-21 컨테이너 변경으로 변환
+gateway:
+  ip: 127.0.0.1
+#  ip: 172.168.0.5
+
+  
+  
+  
+  
+  
+  
+  
