@@ -1,25 +1,20 @@
 token:
   expiration_time: 86400000
-#  secret: '{cipher}AQA2UDLKLRGLI7E8xaHogrZMgKRjg/RN0KNq9IYhBe2UsfWCQ7jSVaysPzSJarE8Qb9I03aiT2UNatUhzrnV69V6M0SnHenX+p5iCUGtttw1rMtXE+xa+SWdi39hcjW69m9VpELV13I/3UylHq2XKuoYYPlAxCd4wlFl3kVvTHgeRcHAh/1gNrEl92NVIDGXBFd4yapq+CX7pJeIM95gUYLg6hr3rF9g7ZzIoOvjUHd6cqYpQFJuhEhjO+PDD21cTtli0Rc2SJTJlkOyIvdLQkjjkos8csd+WoZwh18hZJmv3Ddysm9rGAr8xWMjhkz3mh1Fvv3/cWlOrUFEGZkL/ZIvi+gHLJb7QJl9TwCzuqh5jGX0P5HwX++OAB901Ql9OUFvNgURprc3py1nsU/oHmYK'
-  secret: user_token
-
-
-gateway:
-  ip: 172.18.0.6
-#  ip: 172.18.0.6 # 2022-12-01-10 컨테이너 변경 (127.0.0.1)->(172.18.0.6)
-
-
-
-# [2022-11-17] 데이타베이스 암호영역으로 config-server를 통해서 인젝션 받는다.
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mysql:3306/ecommerce_db?serverTimezone=Asia/Seoul
-    username: ecommerce
-    password: ecommerce1234    
-#    password: '{cipher}b32352840b31336b56688a4aaae1a0adfec0ef1db70ca1665d49651e3c9721bc'
-#    {cipher}라는 뜻은 암호화된 데이타란 뜻이다.
+  secret: roian_token_native-default
   
+gateway:
+  ip: 192.168.0.8
+
+# [2024-08-17-12] 데이타베이스 암호영역으로 config-server를 통해서 대칭키 방식으로 인젝션 받는 경우이다.
+spring:
+    datasource:
+      url: jdbc:h2:mem:h6db
+      driver-class-name: org.h2.Driver
+      username: sa
+      password: '{cipher}d2de159b2508b9b6c43dc64133b451ff74793cfcb09ace7260a7651b16d98f31'
+      # {cipher}라는 뜻은 암호화된 데이타란 뜻이다.
+      # password: cos1234
+
 order_service:
   # case1. 로드밸런서를 api게이트웨이 맡길경우 @LoadBalanced 선언되면 에러가 발생
 #  url: http://127.0.0.1:8000/order-service/%s/orders
@@ -27,9 +22,4 @@ order_service:
   url: http://ORDER-SERVICE/order-service/%s/orders
   exception:
     order_is_empty: User's orders is empty.(#####)
-  
-  
-  
-  
-  
-  
+

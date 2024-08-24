@@ -1,15 +1,11 @@
 token:
   expiration_time: 86400000
-  secret: user_token_prod
+#  secret: '{cipher}AQA2UDLKLRGLI7E8xaHogrZMgKRjg/RN0KNq9IYhBe2UsfWCQ7jSVaysPzSJarE8Qb9I03aiT2UNatUhzrnV69V6M0SnHenX+p5iCUGtttw1rMtXE+xa+SWdi39hcjW69m9VpELV13I/3UylHq2XKuoYYPlAxCd4wlFl3kVvTHgeRcHAh/1gNrEl92NVIDGXBFd4yapq+CX7pJeIM95gUYLg6hr3rF9g7ZzIoOvjUHd6cqYpQFJuhEhjO+PDD21cTtli0Rc2SJTJlkOyIvdLQkjjkos8csd+WoZwh18hZJmv3Ddysm9rGAr8xWMjhkz3mh1Fvv3/cWlOrUFEGZkL/ZIvi+gHLJb7QJl9TwCzuqh5jGX0P5HwX++OAB901Ql9OUFvNgURprc3py1nsU/oHmYK'
+  secret: user_token_native_ecommerce-prod
 
-# 2022-11-21 컨테이너 변경으로 변환
 gateway:
-  ip: 127.0.0.1
-#  ip: 172.168.0.5
+  ip: 192.168.0.8
 
-  
-  
-  
   
   
   

@@ -1,0 +1,37 @@
+token:
+  expiration_time: 86400000
+  secret: roian_token_native-default
+  
+gateway:
+  ip: 192.168.0.8
+
+# [2024-08-17-12] 데이타베이스 암호영역으로 config-server를 통해서 인젝션 받는다.
+spring:
+    datasource:
+      url: jdbc:h2:mem:h6db
+      driver-class-name: org.h2.Driver
+      username: sa
+      password: '{cipher}d2de159b2508b9b6c43dc64133b451ff74793cfcb09ace7260a7651b16d98f31'
+      # {cipher}라는 뜻은 암호화된 데이타란 뜻이다.
+      # password: cos1234
+
+
+
+  
+
+
+
+
+
+
+
+
+
+#order_service:
+#  # case1. 로드밸런서를 api게이트웨이 맡길경우 @LoadBalanced 선언되면 에러가 발생
+##  url: http://127.0.0.1:8000/order-service/%s/orders
+#  # case2. 로드밸런서를 호출하는 템플릿에서 할 경우, 이경우에는 @LoadBalanced 가 선언되어야 된다,.
+#  url: http://ORDER-SERVICE/order-service/%s/orders
+#  exception:
+#    order_is_empty: User's orders is empty.(#####)
+#  

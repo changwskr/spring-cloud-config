@@ -1,0 +1,28 @@
+token:
+  expiration_time: 86400000
+#  secret: '{cipher}AQA2UDLKLRGLI7E8xaHogrZMgKRjg/RN0KNq9IYhBe2UsfWCQ7jSVaysPzSJarE8Qb9I03aiT2UNatUhzrnV69V6M0SnHenX+p5iCUGtttw1rMtXE+xa+SWdi39hcjW69m9VpELV13I/3UylHq2XKuoYYPlAxCd4wlFl3kVvTHgeRcHAh/1gNrEl92NVIDGXBFd4yapq+CX7pJeIM95gUYLg6hr3rF9g7ZzIoOvjUHd6cqYpQFJuhEhjO+PDD21cTtli0Rc2SJTJlkOyIvdLQkjjkos8csd+WoZwh18hZJmv3Ddysm9rGAr8xWMjhkz3mh1Fvv3/cWlOrUFEGZkL/ZIvi+gHLJb7QJl9TwCzuqh5jGX0P5HwX++OAB901Ql9OUFvNgURprc3py1nsU/oHmYK'
+  secret: roian_token_native-dev
+  
+  
+
+gateway:
+  ip: 192.168.0.8
+
+# [2022-11-17] 데이타베이스 암호영역으로 config-server를 통해서 인젝션 받는다.
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
+    username: cos
+    password: '{cipher}AQBhbSZvRxzv/bT8t02nnEqj0DzwcW/73JeNWJmSnvvyH+ls14QNnRh/5uqMl4uDb/aNGajPTogpWEe5Cc2fYJQf7piMj6r0ZmJ9pzQuF8AoHScsmj1MK43/Edf3u3677sNSdhV6oyFmPc2Gq0h3SxOFJc+c+s+6Yysd7IOHDzQjU1ueB03PeH0Uav0J8HQrA0bQg6dKSSpwE1AP9WvIeyHqQMc1wF+Qd0k/BXlrTMSao+MmKRRbWzk7ZReswGkZ/+adQ9zkLRTifm4xszCK2W+eFgnkYFONx87c4OjSdUJfwzwIKjDCtdZLG3CFl/R/V6TW+0l4dDGjXInPJMNcfYqnbJbCmN5YJzLqffakGuU7Q/6Lmwx9V1Kjiw2KON33nZA='
+#    {cipher}라는 뜻은 암호화된 데이타란 뜻이다.
+#    password: cos1234
+  
+order_service:
+  # case1. 로드밸런서를 api게이트웨이 맡길경우 @LoadBalanced 선언되면 에러가 발생
+#  url: http://127.0.0.1:8000/order-service/%s/orders
+  # case2. 로드밸런서를 호출하는 템플릿에서 할 경우, 이경우에는 @LoadBalanced 가 선언되어야 된다,.
+  url: http://ORDER-SERVICE/order-service/%s/orders
+  exception:
+    order_is_empty: User's orders is empty.(#####)
+  
